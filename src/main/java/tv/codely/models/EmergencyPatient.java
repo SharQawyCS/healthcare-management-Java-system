@@ -4,7 +4,7 @@ public class EmergencyPatient extends Patient {
     private String roomNumber;
 
     public EmergencyPatient(String id, String name, String address, String phoneNumber, String gender, String symptoms, String paymentMethod, String diagnosis, String roomNumber) {
-        super(id, name, address, phoneNumber, gender, symptoms, paymentMethod, diagnosis, roomNumber);
+        super(id, name, address, phoneNumber, gender, symptoms, paymentMethod, diagnosis);
         this.roomNumber = roomNumber;
     }
 

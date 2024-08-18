@@ -13,16 +13,14 @@ public class Patient extends Person {
         this.symptoms = symptoms;
         this.paymentMethod = paymentMethod;
         this.diagnosis = diagnosis;
-        this.room = "NONE";
     }
-    public Patient(String id, String name, String address, String phoneNumber, String gender, String symptoms, String paymentMethod, String diagnosis, String room) {
-        super(id, name, address, phoneNumber);
-        this.gender = gender;
-        this.symptoms = symptoms;
-        this.paymentMethod = paymentMethod;
-        this.diagnosis = diagnosis;
-        this.room = room;
-    }
+//    public Patient(String id, String name, String address, String phoneNumber, String gender, String symptoms, String paymentMethod, String diagnosis, String room) {
+//        super(id, name, address, phoneNumber);
+//        this.gender = gender;
+//        this.symptoms = symptoms;
+//        this.paymentMethod = paymentMethod;
+//        this.diagnosis = diagnosis;
+//    }
 
     public String getGender() {
         return gender;
@@ -84,4 +82,5 @@ public class Patient extends Person {
         String[] parts = fileString.split(",");
         return new Patient(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5], parts[6], parts[7]);
     }
+
 }

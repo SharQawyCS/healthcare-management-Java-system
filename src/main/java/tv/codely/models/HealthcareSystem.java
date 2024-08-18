@@ -77,8 +77,8 @@ public class HealthcareSystem {
             String roomNumber = scanner.nextLine();
 //            EmergencyPatient emergencyPatient = new EmergencyPatient(patientId, patientName, patientAddress, patientPhoneNumber, gender, symptoms, paymentMethod, diagnosis, roomNumber);
 //            addPatient(emergencyPatient);
-            Patient patient = new Patient(patientId, patientName, patientAddress, patientPhoneNumber, gender, symptoms, paymentMethod, diagnosis, roomNumber);
-            addPatient(patient);
+            EmergencyPatient Empatient = new EmergencyPatient(patientId, patientName, patientAddress, patientPhoneNumber, gender, symptoms, paymentMethod, diagnosis, roomNumber);
+            addPatient(Empatient);
         } else {
             Patient patient = new Patient(patientId, patientName, patientAddress, patientPhoneNumber, gender, symptoms, paymentMethod, diagnosis);
             addPatient(patient);
@@ -265,12 +265,14 @@ public class HealthcareSystem {
 
     public List<EmergencyPatient> getEmergencyPatients() {
         List<EmergencyPatient> emergencyPatients = new ArrayList<>();
-        for (Patient patient : patients) {
-            if (!Objects.equals(patient.getRoom(), "NONE")) {
-                emergencyPatients.add((EmergencyPatient) patient);
-            }
 
+        for (Patient patient : patients) {
+            if (patient instanceof EmergencyPatient) {
+                EmergencyPatient emergencyPatient = (EmergencyPatient) patient;
+                    emergencyPatients.add(emergencyPatient);
+            }
         }
+
         return emergencyPatients;
     }
 
@@ -315,7 +317,16 @@ public class HealthcareSystem {
     private void loadPatients() {
         List<String> data = FileManager.loadFromFile("patients.txt");
         for (String line : data) {
-            patients.add(Patient.fromFileString(line));
+            String[] parts = line.split(","); // Assuming comma-separated values
+
+            if (parts.length == 9) {
+                EmergencyPatient patient = EmergencyPatient.fromFileString(line);
+                patients.add(patient);
+            } else {
+                Patient patient = Patient.fromFileString(line);
+                patients.add(patient);
+            }
+
         }
     }
 

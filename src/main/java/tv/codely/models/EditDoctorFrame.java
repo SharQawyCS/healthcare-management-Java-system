@@ -109,4 +109,6 @@ public class EditDoctorFrame extends JFrame {
         });
         setVisible(true);
     }
+
+
 }

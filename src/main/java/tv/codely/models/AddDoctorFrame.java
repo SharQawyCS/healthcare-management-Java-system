@@ -1,5 +1,7 @@
 package tv.codely.models;
 
+import tv.codely.utils.MainScreenGUI;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,6 +12,8 @@ public class AddDoctorFrame extends JFrame {
     private JButton submitBtn;
 
     public AddDoctorFrame() {
+
+
         setTitle("Add New Doctor");
         setSize(300, 300);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
