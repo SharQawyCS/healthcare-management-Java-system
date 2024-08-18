@@ -2,4 +2,4 @@
 ,kk,k,k,k,k,k,k
 23p002,Mos,wdas,983021hd,FEMALE,K,ee,ee
 eerrw,eewewe,ewee,ewewew,ewewew,ewewew,ewewe,wewew
-fdf,dfgdgEnter Name,Enter gfdgfdg,fgdg,fdgfdg Gender,gfd,Enter dfgdfgdfg Method,Enter dgfgdfg
+vcvccvcvv,Enter Namevcvcvc,Enter Addressvcvcvcv,Enter Phone Nuvcvcvmvcber,Enter Gendervcvcv,Enter Symptomcvcvcs,Enter Payment cvcvcMethod,Enter Diagnosisvcvcvc,Enter Room Numbecvcvcvr (Only for Emergency Patients)

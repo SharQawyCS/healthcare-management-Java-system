@@ -1,5 +1,5 @@
 
-package utils;
+package tv.codely.utils;
 
 
 import tv.codely.models.HealthcareSystem;

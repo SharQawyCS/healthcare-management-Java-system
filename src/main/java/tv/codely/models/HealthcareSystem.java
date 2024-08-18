@@ -1,5 +1,6 @@
 package tv.codely.models;
-import utils.FileManager;
+import tv.codely.utils.FileManager;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
