@@ -12,22 +12,16 @@ public class MainScreenGUI extends JFrame {
     private final JPanel contentPanel;
     private final Color mainBackgroundColor = new Color(70, 130, 180);
 
-
     public MainScreenGUI() {
         // Set up the frame
         setTitle("Healthcare Management System");
-        setSize(850, 700);
+        setSize(900, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
         // Header with background color
-        JLabel headerLabel = new JLabel("Healthcare Management System", JLabel.CENTER);
-        headerLabel.setFont(new Font("Arial", Font.BOLD, 24));
-        headerLabel.setBorder(BorderFactory.createEmptyBorder(20, 0, 20, 0));
-        headerLabel.setOpaque(true);  // Allows background color to be set
-        headerLabel.setBackground(mainBackgroundColor);  // Set your preferred background color
-        headerLabel.setForeground(Color.WHITE);  // Set the text color to white
+        JLabel headerLabel = getLabel();
         add(headerLabel, BorderLayout.NORTH);
 
         // Navigation panel with buttons
@@ -53,6 +47,30 @@ public class MainScreenGUI extends JFrame {
         contentPanel.setLayout(new BorderLayout());
         contentPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         add(contentPanel, BorderLayout.CENTER);
+
+
+        contentPanel.removeAll();
+
+        // Create a panel to hold the welcome message
+        JPanel messagePanel = new JPanel();
+        messagePanel.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(10, 10, 10, 10);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.anchor = GridBagConstraints.CENTER;
+
+        // Create the welcome message label
+        JLabel welcomeLabel = new JLabel("Choose From the side to continue", JLabel.CENTER);
+        welcomeLabel.setFont(new Font("Arial", Font.BOLD, 18));
+        welcomeLabel.setForeground(mainBackgroundColor);  // Use your defined color
+
+        // Add the label to the panel
+        messagePanel.add(welcomeLabel, gbc);
+
+        // Add the message panel to the content panel
+        contentPanel.add(messagePanel, BorderLayout.CENTER);
+        contentPanel.revalidate();
+        contentPanel.repaint();
 
         // Footer with background color
         JLabel footerLabel = new JLabel("Made with love in Egypt \uD83D\uDC99", JLabel.CENTER);
@@ -85,6 +103,16 @@ public class MainScreenGUI extends JFrame {
 
         // Make the frame visible
         setVisible(true);
+    }
+
+    private JLabel getLabel() {
+        JLabel headerLabel = new JLabel("Healthcare Management System", JLabel.CENTER);
+        headerLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        headerLabel.setBorder(BorderFactory.createEmptyBorder(20, 0, 20, 0));
+        headerLabel.setOpaque(true);  // Allows background color to be set
+        headerLabel.setBackground(mainBackgroundColor);  // Set your preferred background color
+        headerLabel.setForeground(Color.WHITE);  // Set the text color to white
+        return headerLabel;
     }
 
     //TODO == DOCTOR ==  TODO TODO TODO TODO TODO TODO TODO TODO TODO
@@ -175,25 +203,6 @@ public class MainScreenGUI extends JFrame {
             formPanel.add(textFields[i], gbc);
         }
 
-        // TODO Create and add radio buttons
-//        JLabel ratioLabel = new JLabel("Choose one:");
-//        gbc.gridx = 0;
-//        gbc.gridy = 6;
-//        formPanel.add(ratioLabel, gbc);
-//
-//        JRadioButton option1 = new JRadioButton("Option 1");
-//        JRadioButton option2 = new JRadioButton("Option 2");
-//        ButtonGroup group = new ButtonGroup();
-//        group.add(option1);
-//        group.add(option2);
-//
-//        JPanel radioPanel = new JPanel();
-//        radioPanel.add(option1);
-//        radioPanel.add(option2);
-//
-//        gbc.gridx = 1;
-//        formPanel.add(radioPanel, gbc);
-
         // Create and add the submit button
         JButton submitButton = new JButton("Add Doctor");
         gbc.gridx = 0;
@@ -223,6 +232,7 @@ public class MainScreenGUI extends JFrame {
 
 
                 JOptionPane.showMessageDialog(this, "Doctor added successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                showDoctorOperations();
             } else {
                 JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -348,8 +358,9 @@ public class MainScreenGUI extends JFrame {
                         doctor.setPhoneNumber(textFields[2].getText().trim());
                         doctor.setSpecialty(textFields[3].getText().trim());
 
-                        JOptionPane.showMessageDialog(this, "Doctor information updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                         HealthcareSystem.getInstance().editDoctor(id, textFields[0].getText().trim(), textFields[1].getText().trim(), textFields[2].getText().trim(), textFields[3].getText().trim());
+                        JOptionPane.showMessageDialog(this, "Doctor information updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                        showDoctorOperations();
                     } else {
                         JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Error", JOptionPane.ERROR_MESSAGE);
                     }
@@ -359,6 +370,7 @@ public class MainScreenGUI extends JFrame {
                 contentPanel.repaint();
             } else {
                 JOptionPane.showMessageDialog(this, "Doctor ID not found!", "Error", JOptionPane.ERROR_MESSAGE);
+                editDoctor();
             }
         });
 
@@ -474,9 +486,10 @@ public class MainScreenGUI extends JFrame {
             if (doctor != null) {
                 system.deleteDoctor(id);
                 JOptionPane.showMessageDialog(this, "Doctor Deleted!", "Success", JOptionPane.INFORMATION_MESSAGE);
-
+                showDoctorOperations();
             } else {
                 JOptionPane.showMessageDialog(this, "Doctor ID not found!", "Error", JOptionPane.ERROR_MESSAGE);
+                deleteDoctor();
             }
         });
 
@@ -635,6 +648,7 @@ public class MainScreenGUI extends JFrame {
 
 
                 JOptionPane.showMessageDialog(this, "Patient added successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                showPatientOperations();
             } else {
                 JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -763,8 +777,9 @@ public class MainScreenGUI extends JFrame {
                         patient.setPaymentMethod(textFields[5].getText().trim());
                         patient.setDiagnosis(textFields[6].getText().trim());
 
-                        JOptionPane.showMessageDialog(this, "Patient information updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
                         HealthcareSystem.getInstance().editPatient(id, textFields[0].getText().trim(), textFields[1].getText().trim(), textFields[2].getText().trim(), textFields[3].getText().trim(), textFields[4].getText().trim(), textFields[5].getText().trim(), textFields[6].getText().trim());
+                        JOptionPane.showMessageDialog(this, "Patient information updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                        showPatientOperations();
                     } else {
                         JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Error", JOptionPane.ERROR_MESSAGE);
                     }
@@ -774,6 +789,7 @@ public class MainScreenGUI extends JFrame {
                 contentPanel.repaint();
             } else {
                 JOptionPane.showMessageDialog(this, "Patient ID not found!", "Error", JOptionPane.ERROR_MESSAGE);
+                editPatient();
             }
         });
 
@@ -953,9 +969,10 @@ public class MainScreenGUI extends JFrame {
             if (patient != null) {
                 system.deletePatient(id);
                 JOptionPane.showMessageDialog(this, "Patient Deleted!", "Success", JOptionPane.INFORMATION_MESSAGE);
-
+                showPatientOperations();
             } else {
                 JOptionPane.showMessageDialog(this, "Patient ID not found!", "Error", JOptionPane.ERROR_MESSAGE);
+                deletePatient();
             }
         });
 
@@ -1080,8 +1097,8 @@ public class MainScreenGUI extends JFrame {
 
                 // Save the appointment
                 system.addAppointment(new Appointment(patient.getId(), doctor.getId(), textFields[2].getText().trim()));
-
                 JOptionPane.showMessageDialog(this, "Appointment added successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+                showAppointments();
             } else {
                 JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Error", JOptionPane.ERROR_MESSAGE);
             }
