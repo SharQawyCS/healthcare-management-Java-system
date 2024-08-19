@@ -3,16 +3,13 @@ package tv.codely.utils;
 import tv.codely.models.*;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.List;
 
 public class MainScreenGUI extends JFrame {
 
-    private JPanel contentPanel;
+    private final JPanel contentPanel;
     private final Color mainBackgroundColor = new Color(70, 130, 180);
 
 
@@ -67,26 +64,11 @@ public class MainScreenGUI extends JFrame {
         add(footerLabel, BorderLayout.SOUTH);
 
         // Button actions
-        doctorOperationsBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                showDoctorOperations();
-            }
-        });
+        doctorOperationsBtn.addActionListener(e -> showDoctorOperations());
 
-        patientOperationsBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                showPatientOperations();
-            }
-        });
+        patientOperationsBtn.addActionListener(e -> showPatientOperations());
 
-        appointmentsBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                showAppointments();
-            }
-        });
+        appointmentsBtn.addActionListener(e -> showAppointments());
 
         exitBtn.addActionListener(e -> {
             int response = JOptionPane.showConfirmDialog(
@@ -1175,9 +1157,5 @@ public class MainScreenGUI extends JFrame {
                 button.setBackground(new Color(0, 122, 255)); // Original color
             }
         });
-    }
-
-    public static void main(String[] args) {
-        new MainScreenGUI();
     }
 }
