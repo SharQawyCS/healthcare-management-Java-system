@@ -1,14 +1,6 @@
 package tv.codely;
 
-import tv.codely.models.AppointmentOperationsFrame;
-import tv.codely.models.DoctorOperations;
-import tv.codely.models.PatientOperationsFrame;
 import tv.codely.utils.MainScreenGUI;
-
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 
 public class Main {
