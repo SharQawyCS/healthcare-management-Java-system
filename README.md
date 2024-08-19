@@ -1,64 +1,51 @@
-<p align="center">
-  <a href="https://codely.com">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://codely.com/logo/codely_logo-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://codely.com/logo/codely_logo-light.svg">
-      <img alt="Codely logo" src="https://codely.com/logo/codely_logo.svg">
-    </picture>
-  </a>
-</p>
+# OverView
+The Healthcare Management System is a Java-based application designed to manage doctors, patients, and appointments within a healthcare setting. The system includes functionality to add, edit, and display doctors and patients, as well as manage appointments. It is built using Swing for the GUI and utilizes a text file for data persistence.
 
-<h1 align="center">
-  ☕🚀 Java Basic Skeleton: Save the boilerplate in your new projects
-</h1>
+# Features
+- Doctor Management
+  - Add new doctors.
+  - Edit existing doctor details.
+  - Display a list of all doctors.
 
-<p align="center">
-    <a href="https://github.com/CodelyTV"><img src="https://img.shields.io/badge/Codely-OS-green.svg?style=flat-square" alt="Codely Open Source projects"/></a>
-    <a href="https://pro.codely.com"><img src="https://img.shields.io/badge/Codely-Pro-black.svg?style=flat-square" alt="Codely Pro courses"/></a>
-    <a href="https://github.com/CodelyTV/java-basic-skeleton/actions"><img src="https://github.com/CodelyTV/java-basic-skeleton/workflows/Main%20Workflow/badge.svg" alt="Workflow Status"></a>
-</p>
+- Patient Management
+  - Add new patients.
+  - Display a list of all patients.
+  - Display a list of emergency patients only.
+ 
+- Appointment Management
+  - Add new appointments.
+  - Display all appointments.
+ 
+# Installation
+1. Clone the repository
+```bash
+git clone https://github.com/SharQawyCS/healthcare-management-Java-system.git
+```
 
+2. Navigate to the project directory
+```bash
+cd healthcare-management-system
+```
 
-> ⚡ Start your Java projects as fast as possible
+3.	Build the project \
+Use your preferred IDE (e.g., IntelliJ, Eclipse) to build and run the project.
 
-## ℹ️ Introduction
+# Usage
 
-This is a repository intended to serve as a starting point if you want to bootstrap a Java project with JUnit and Gradle.
+### Adding a Doctor
+1.	Select the “Add Doctor” option.
+2.	Fill in the required details.
+3.	Click “Submit” to save the doctor to the system.
 
-## 🏁 How To Start
+### Adding a Patient
+1.	Select the “Add Patient” option.
+2.	Fill in the patient’s details.
+3.	Click “Submit” to save the patient to the system.
 
-1. Install Java: `brew install corretto` or download it [here](https://docs.aws.amazon.com/corretto/)
-2. Set it as your default JVM: `export JAVA_HOME='/Library/Java/JavaVirtualMachines/amazon-corretto-$JAVA_VERSION$.jdk/Contents/Home'`
-3. Clone this repository: `git clone https://github.com/CodelyTV/java-basic-skeleton`.
-4. Execute some [Gradle lifecycle tasks](https://docs.gradle.org/current/userguide/java_plugin.html#lifecycle_tasks) in order to check everything is OK:
-    1. Create [the project JAR](https://docs.gradle.org/current/userguide/java_plugin.html#sec:jar): `make build`
-    2. Run the tests and plugins verification tasks: `make test`
-5. Start developing!
+### Managing Appointments
+1.	Select “Add Appointment” to create a new appointment.
+2.	Choose the doctor and patient, and select the date.
+3.	Click “Submit” to finalize the appointment.
 
-## ☝️ How to update dependencies
-
-* Gradle (current version: 8.9 - [releases](https://gradle.org/releases/)):
-`./gradlew wrapper --gradle-version=8.9 --distribution-type=bin` or modifying the [gradle-wrapper.properties](gradle/wrapper/gradle-wrapper.properties#L3)
-* JUnit (current version: 5.8.2 - [releases](https://junit.org/junit5/docs/snapshot/release-notes/index.html)): [`build.gradle:14`](build.gradle#L14-L15)
-
-## 💡 Related repositories
-
-### ☕ Java
-
-* 📂 [Java Basic Skeleton](https://github.com/CodelyTV/java-basic-skeleton)
-* ⚛ [Java OOP Examples](https://github.com/CodelyTV/java-oop-examples)
-* 🧱 [Java SOLID Examples](https://github.com/CodelyTV/java-solid-examples)
-* 🥦 [Java DDD Example](https://github.com/CodelyTV/java-ddd-example)
-
-### 🐘 PHP
-
-* 📂 [PHP Basic Skeleton](https://github.com/CodelyTV/php-basic-skeleton)
-* 🎩 [PHP DDD Skeleton](https://github.com/CodelyTV/php-ddd-skeleton)
-* 🥦 [PHP DDD Example](https://github.com/CodelyTV/php-ddd-example)
-
-### 🧬 Scala
-
-* 📂 [Scala Basic Skeleton](https://github.com/CodelyTV/scala-basic-skeleton)
-* ⚡ [Scala Basic Skeleton (g8 template)](https://github.com/CodelyTV/scala-basic-skeleton.g8)
-* ⚛ [Scala Examples](https://github.com/CodelyTV/scala-examples)
-* 🥦 [Scala DDD Example](https://github.com/CodelyTV/scala-ddd-example)
+# Contribution
+Feel free to fork this repository, create a new branch, and submit a pull request with your changes. Please ensure that your code follows the existing style and conventions.
