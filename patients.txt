@@ -30,3 +30,5 @@ P033,Gina Orange,2828 Willow Lane,555-1137,Female,Numbness in Limbs,Cash, Multip
 P034,Hank Blue,2929 Maple Court,555-1248,Male,Frequent Urination,Credit Card, Prostate Enlargement,Room 2929
 P035,Iris Pink,3030 Birchwood Lane,555-1359,Female,Night Sweats,Insurance, Tuberculosis
 P036,Jake Red,3131 Oakwood Avenue,555-1460,Male,Severe Headache,Cash, Meningitis
+P040,Ahmed Mostafa,Cairo,01145183211,Male,Stomach Pain,Cash,IDK,Room 205
+P051,Mohamed Wael,Giza,01252741134,Prefer to not say,Headache,CIB,flu

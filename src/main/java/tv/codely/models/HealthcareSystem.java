@@ -3,7 +3,6 @@ import tv.codely.utils.FileManager;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class HealthcareSystem {
@@ -22,12 +21,10 @@ public class HealthcareSystem {
         loadAppointments();
     }
 
-
     public void addDoctor(Doctor doctor) {
         doctors.add(doctor);
         saveDoctors();
     }
-    //Checked: DONE, Tested:
     public void addDoctor() {
         System.out.print("Enter Doctor ID: ");
         String doctorId = scanner.nextLine();
@@ -47,12 +44,10 @@ public class HealthcareSystem {
         patients.add(patient);
         savePatients();
     }
-
     public void addPatient(EmergencyPatient patient) {
         patients.add(patient);
         savePatients();
     }
-    //Checked: DONE, Tested:
     public void addPatient() {
         System.out.print("Enter Patient ID: ");
         String patientId = scanner.nextLine();
@@ -85,13 +80,10 @@ public class HealthcareSystem {
         }
     }
 
-
     public void addAppointment(Appointment appointment) {
         appointments.add(appointment);
         saveAppointments();
     }
-
-    //Checked: DONE, Tested:
     public void addAppointment() {
         System.out.print("Enter Doctor ID: ");
         String appointmentDoctorId = scanner.nextLine();
@@ -135,7 +127,6 @@ public class HealthcareSystem {
         return null; // Return null if no doctor with the given ID is found
     }
 
-    //Checked: DONE, Tested:
     public void editDoctor(){
         System.out.print("Enter Doctor ID to edit: ");
         String editDoctorId = scanner.nextLine();
@@ -167,7 +158,6 @@ public class HealthcareSystem {
         }
         System.out.println("Patient not found!");
     }
-    //Checked: DONE, Tested:
     public void editPatient(){
         System.out.print("Enter Patient ID to edit: ");
         String editPatientId = scanner.nextLine();
@@ -188,12 +178,10 @@ public class HealthcareSystem {
         editPatient(editPatientId, editPatientName, editPatientAddress, editPatientPhoneNumber, editGender, editSymptoms, editPaymentMethod, editDiagnosis);
     }
 
-    public boolean deleteDoctor(String id) {
+    public void deleteDoctor(String id) {
         doctors.removeIf(doctor -> doctor.getId().equals(id));
         saveDoctors();
-        return true;
     }
-    //Checked: DONE, Tested:
     public void deleteDoctor(){
         System.out.print("Enter Doctor ID to delete: ");
         String deleteDoctorId = scanner.nextLine();
@@ -204,14 +192,12 @@ public class HealthcareSystem {
         patients.removeIf(patient -> patient.getId().equals(id));
         savePatients();
     }
-    //Checked: DONE, Tested:
     public void deletePatient(){
         System.out.print("Enter Patient ID to delete: ");
         String deletePatientId = scanner.nextLine();
         deletePatient(deletePatientId);
     }
 
-    //Checked: DONE, Tested:
     public void displayAllDoctors(){
         if(doctors.isEmpty()) {
             System.out.println("No Doctors found!");
@@ -222,7 +208,6 @@ public class HealthcareSystem {
         }
     }
 
-    //Checked: DONE, Tested:
     public void displayAllPatients() {
         if (patients.isEmpty()) {
             System.out.println("No patients found!");
@@ -233,7 +218,6 @@ public class HealthcareSystem {
         }
     }
 
-    //Checked: DONE, Tested:
     public void displayEmergencyPatients() {
         List<EmergencyPatient> emergencyPatients = getEmergencyPatients();
         if (emergencyPatients.isEmpty()) {
@@ -245,7 +229,6 @@ public class HealthcareSystem {
         }
     }
 
-    //Checked: DONE, Tested:
     public void displayAppointments() {
         if (appointments.isEmpty()) {
             System.out.println("No appointments found.");

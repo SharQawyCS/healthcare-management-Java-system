@@ -7,7 +7,6 @@ D006,Jessica Taylor,234 Birch Street,555-2345,Gastroenterology
 D007,Michael Miller,678 Aspen Drive,555-6789,Oncology
 D008,Elizabeth Wilson,135 Willow Way,555-1357,Endocrinology
 D009,David Martinez,246 Elmwood Avenue,555-2468,Hematology
-D010,Laura Anderson,357 Beech Street,555-3579,Nephrology
 D011,James Thomas,468 Chestnut Road,555-4680,Rheumatology
 D012,Olivia Moore,579 Fir Avenue,555-5791,Infectious Disease
 D013,Christopher Martin,680 Cedar Street,555-6802,Pulmonology
@@ -33,3 +32,4 @@ D032,Emily Hernandez,2679 Pine Street,555-2671,Neurology
 D033,James Moore,2780 Elm Road,555-2782,Cardiology
 D034,Olivia Jackson,2891 Oak Lane,555-2893,Oncology
 D035,Liam Scott,3002 Pine Avenue,555-3004,Dermatology
+D040,Sharqawy Wael,Sharqia,01091215660,Surgy
