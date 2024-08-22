@@ -14,13 +14,6 @@ public class Patient extends Person {
         this.paymentMethod = paymentMethod;
         this.diagnosis = diagnosis;
     }
-//    public Patient(String id, String name, String address, String phoneNumber, String gender, String symptoms, String paymentMethod, String diagnosis, String room) {
-//        super(id, name, address, phoneNumber);
-//        this.gender = gender;
-//        this.symptoms = symptoms;
-//        this.paymentMethod = paymentMethod;
-//        this.diagnosis = diagnosis;
-//    }
 
     public String getGender() {
         return gender;

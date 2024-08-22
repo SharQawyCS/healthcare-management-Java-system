@@ -8,7 +8,6 @@ D007,Michael Miller,678 Aspen Drive,555-6789,Oncology
 D008,Elizabeth Wilson,135 Willow Way,555-1357,Endocrinology
 D009,David Martinez,246 Elmwood Avenue,555-2468,Hematology
 D011,James Thomas,468 Chestnut Road,555-4680,Rheumatology
-D012,Olivia Moore,579 Fir Avenue,555-5791,Infectious Disease
 D013,Christopher Martin,680 Cedar Street,555-6802,Pulmonology
 D014,Ava Jackson,791 Maple Court,555-7913,Neurology
 D015,Andrew Lewis,802 Pinewood Drive,555-8024,Cardiology

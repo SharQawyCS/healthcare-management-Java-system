@@ -9,5 +9,7 @@ public class Main {
     }
 }
 
-// Designed and implemented by 'sharqawycs' all rights reversed.
+
+
+// Designed nd implemented by 'sharqawycs' all rights reversed.
 // Computer Engineering, Ain Shams University, Cairo - Egypt
